@@ -22,6 +22,12 @@ body {
     color: var(--text);
 }
 
+/* Centered content container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 /* Page heading card */
 h1 {
     font-family: 'Poppins', sans-serif;
