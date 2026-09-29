@@ -2,76 +2,92 @@
 
 ## About the Project
 
-This project is a simple Budget Tracker webpage built as part of the Week 2 Web Development assignment. It was developed by upgrading the Week 1 Budget Tracker project with an expense table, improved form, multimedia content, interactive elements, and advanced CSS selectors.
+This project is a Budget Tracker developed as part of the PLP Software Engineering Training.
+
+The project started as a simple budget tracker and was progressively improved with HTML, CSS, forms, tables, multimedia elements, interactive features, and visual styling.
 
 ## What I Built
 
 ### 1. Expense Table
 
-The **Your Expenses** section contains an HTML table with:
+I created a structured expense table using HTML table elements including:
 
-* Expense Name
-* Amount
-* Category
-* Date
-
-The table includes five sample expenses and uses `<thead>`, `<tbody>`, `<tr>`, `<th>`, and `<td>` elements.
-
-CSS was used to add borders, spacing, a colored header, alternating row colors, and a hover effect.
+- Table headers
+- Expense names
+- Amounts
+- Categories
+- Dates
+- Alternating row colors
+- Borders and spacing for readability
 
 ### 2. Add Expense Form
 
-The **Add Expense** section contains a form with:
+The tracker includes a form for entering expense information.
 
-* Expense name input
-* Amount input
-* Category dropdown
-* Add Expense button
+The form contains:
 
-The category dropdown includes Food, Transport, Rent, Entertainment, and Other.
+- Expense Name
+- Amount
+- Category
+- Category options including Food, Transport, Rent, Entertainment, and Other
+- Add Expense button
 
 ### 3. Multimedia Elements
 
-The webpage includes:
+The project includes:
 
-* A budget tracker image near the main heading
-* An embedded YouTube budgeting video
-
-The image includes alternative text and a specified width. The YouTube video uses an iframe with width, height, title, and other required attributes.
+- A budget tracker icon
+- An embedded YouTube budgeting tips video
 
 ### 4. Interactive Elements
 
-The project includes a collapsible **How to use this tracker** section using `<details>` and `<summary>`.
+The project includes:
 
-The expense table also has a hover effect, and the Add Expense button uses a pointer cursor.
+- A collapsible "How to use this tracker" section
+- Hover effects on table rows
+- Interactive button styling
 
-### 5. Advanced CSS Selectors
+### 5. Visual Identity and CSS Design
 
-The stylesheet uses several advanced CSS selectors, including:
+For Week 3, I focused on improving the visual design of the Budget Tracker without changing its HTML structure or functionality.
 
-* Descendant selector
-* Direct child selector
-* `:nth-child()` pseudo-class
-* `:hover` pseudo-class
-* `:focus` pseudo-class
+The design includes:
 
-These selectors are used to style different parts of the webpage and improve its appearance and interaction.
+- A consistent blue and navy color palette
+- Light blue-gray page background
+- White card-style sections
+- Rounded corners
+- Consistent borders
+- Improved spacing and padding
+- Alternating table row colors
+- Styled table headers
+- Consistent form controls and buttons
+- Button hover effects
+- Focus styles for input fields and the category selector
+
+### 6. Typography
+
+Google Fonts were used to improve the typography of the project.
+
+- Poppins is used for headings.
+- Inter is used for body text, labels, form elements, buttons, and table content.
+
+The fonts are used consistently throughout the Budget Tracker to create a clean and readable design.
 
 ## Files in the Project
 
-* `index.html` — Contains the structure and content of the Budget Tracker webpage.
-* `style.css` — Contains the styling and advanced CSS selectors.
-* `README.md` — Explains the project and what each part does.
+- `index.html` – Contains the structure and content of the Budget Tracker.
+- `style.css` – Contains the visual styling, color palette, typography, table styling, form styling, and layout.
+- `README.md` – Explains the project and the features that were built.
 
 ## Technologies Used
 
-* HTML5
-* CSS3
-* YouTube iframe
-* Visual Studio Code
+- HTML5
+- CSS3
+- Google Fonts
+- YouTube iframe
+- Visual Studio Code
 
 ## Author
-
-Author
 
 PLP Learner

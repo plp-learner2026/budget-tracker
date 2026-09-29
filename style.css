@@ -1,29 +1,63 @@
-/* General page styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    background-color: #f4f4f4;
-    color: #333;
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
+
+/* Color palette */
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --heading: #1e293b;
+    --text: #334155;
+    --background: #f1f5f9;
+    --card: #ffffff;
+    --table-row: #eff6ff;
+    --border: #cbd5e1;
 }
 
-/* Main heading */
+/* General page styling */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 40px;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* Page heading card */
 h1 {
+    font-family: 'Poppins', sans-serif;
     text-align: center;
-    color: #2c3e50;
+    color: var(--heading);
+    background-color: var(--card);
+    padding: 25px;
+    margin: 0 0 20px 0;
+    border: 2px solid var(--border);
+    border-radius: 12px;
 }
 
 /* Description */
 p {
     font-size: 16px;
+    line-height: 1.6;
 }
 
-/* ID selector: Add Expense section */
+/* Add Expense card */
 #add-expense {
-    background-color: white;
-    padding: 20px;
+    background-color: var(--card);
+    padding: 25px;
     margin-top: 25px;
-    border: 2px solid #3498db;
-    border-radius: 8px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+}
+
+/* Section headings */
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--heading);
+}
+
+/* Direct child selector */
+#add-expense > h2 {
+    color: var(--primary);
 }
 
 /* Form styling */
@@ -31,9 +65,13 @@ p {
     display: block;
 }
 
-/* Direct child selector */
-#add-expense > h2 {
-    color: #3498db;
+/* Labels */
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    color: var(--heading);
 }
 
 /* Input, select, and button styling */
@@ -41,64 +79,107 @@ input,
 select,
 button {
     display: block;
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #aaa;
-    border-radius: 5px;
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
 }
 
 /* Focus selector */
 input:focus,
 select:focus {
-    border: 2px solid #3498db;
+    border: 2px solid var(--primary);
     outline: none;
 }
 
 /* Button */
 button {
-    background-color: #3498db;
+    background-color: var(--primary);
     color: white;
+    border: none;
+    font-weight: 600;
     cursor: pointer;
+    margin-top: 20px;
 }
 
-/* Class selector: Your Expenses section */
+/* Button hover */
+button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Expenses card */
 .expenses {
-    background-color: #eaf2f8;
-    padding: 20px;
+    background-color: var(--card);
+    padding: 25px;
     margin-top: 25px;
-    border: 2px solid #2c3e50;
-    border-radius: 8px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
 }
 
 /* Descendant selector */
 .expenses table {
     width: 100%;
     border-collapse: collapse;
-    background-color: white;
+    background-color: var(--card);
+    margin-top: 15px;
 }
 
 /* Table cells */
 .expenses th,
 .expenses td {
-    border: 1px solid #aaa;
-    padding: 12px;
+    border: 1px solid var(--border);
+    padding: 14px;
     text-align: left;
 }
 
 /* Table header */
 .expenses th {
-    background-color: #3498db;
+    background-color: var(--primary);
     color: white;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Alternating table rows */
 .expenses tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: var(--table-row);
 }
 
 /* Table row hover effect */
 .expenses tr:hover {
-    background-color: #d6eaf8;
+    background-color: #dbeafe;
+}
+
+/* Collapsible instructions */
+details {
+    background-color: var(--card);
+    padding: 20px;
+    margin-top: 25px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+}
+
+summary {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+/* Budgeting Tips section */
+section:last-of-type {
+    background-color: var(--card);
+    padding: 25px;
+    margin-top: 25px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+}
+
+/* Responsive video */
+iframe {
+    max-width: 100%;
+    border-radius: 8px;
 }
