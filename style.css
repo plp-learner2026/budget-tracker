@@ -6,18 +6,18 @@ body {
     color: #333;
 }
 
-/* Element selector: styles the main heading */
+/* Main heading */
 h1 {
     text-align: center;
     color: #2c3e50;
 }
 
-/* Element selector: styles the description */
+/* Description */
 p {
     font-size: 16px;
 }
 
-/* ID selector: styles the Add Expense section */
+/* ID selector: Add Expense section */
 #add-expense {
     background-color: white;
     padding: 20px;
@@ -26,7 +26,44 @@ p {
     border-radius: 8px;
 }
 
-/* Class selector: styles the Your Expenses section */
+/* Form styling */
+#add-expense form {
+    display: block;
+}
+
+/* Direct child selector */
+#add-expense > h2 {
+    color: #3498db;
+}
+
+/* Input, select, and button styling */
+input,
+select,
+button {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Focus selector */
+input:focus,
+select:focus {
+    border: 2px solid #3498db;
+    outline: none;
+}
+
+/* Button */
+button {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+}
+
+/* Class selector: Your Expenses section */
 .expenses {
     background-color: #eaf2f8;
     padding: 20px;
@@ -35,12 +72,33 @@ p {
     border-radius: 8px;
 }
 
-/* Styles the input fields */
-input {
-    display: block;
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
+/* Descendant selector */
+.expenses table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+/* Table cells */
+.expenses th,
+.expenses td {
     border: 1px solid #aaa;
-    border-radius: 5px;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Table header */
+.expenses th {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Alternating table rows */
+.expenses tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Table row hover effect */
+.expenses tr:hover {
+    background-color: #d6eaf8;
 }
