@@ -1,92 +1,114 @@
-# My Budget Tracker
+# SpendWise Dashboard
 
 ## About the Project
 
-This project is a Budget Tracker developed as part of the PLP Software Engineering Training.
+SpendWise is a modern personal finance dashboard designed to help users view and organize their spending, budgeting, and savings information in one place.
 
-The project started as a simple budget tracker and was progressively improved with HTML, CSS, forms, tables, multimedia elements, interactive features, and visual styling.
+This Week 4 project focuses on rebuilding the Budget Tracker layout using CSS Grid and Flexbox. The dashboard includes a navigation sidebar, financial overview header, and category cards with realistic static financial information.
 
 ## What I Built
 
-### 1. Expense Table
+### 1. Dashboard Layout
 
-I created a structured expense table using HTML table elements including:
+The dashboard includes:
 
-- Table headers
-- Expense names
-- Amounts
-- Categories
-- Dates
-- Alternating row colors
-- Borders and spacing for readability
+- A SpendWise sidebar navigation menu
+- A main dashboard area
+- A financial overview header
+- A monthly budget summary
+- Six financial category cards:
+  - Food
+  - Transport
+  - Rent
+  - Entertainment
+  - Savings
+  - Utilities
 
-### 2. Add Expense Form
+### 2. CSS Grid
 
-The tracker includes a form for entering expense information.
+CSS Grid is used for the overall dashboard layout.
 
-The form contains:
+It creates:
 
-- Expense Name
-- Amount
-- Category
-- Category options including Food, Transport, Rent, Entertainment, and Other
-- Add Expense button
+- A sidebar column
+- A main content column
+- A three-column layout for the financial cards
 
-### 3. Multimedia Elements
+The card layout changes to a single column on smaller screens.
 
-The project includes:
+### 3. Flexbox
 
-- A budget tracker icon
-- An embedded YouTube budgeting tips video
+Flexbox is used inside the dashboard for:
 
-### 4. Interactive Elements
+- Sidebar navigation
+- Header content
+- Monthly budget summary
+- Individual dashboard cards
+- Card content
 
-The project includes:
+### 4. CSS Custom Properties
 
-- A collapsible "How to use this tracker" section
-- Hover effects on table rows
-- Interactive button styling
+CSS custom properties are defined in `:root` and used throughout the stylesheet for consistent styling.
 
-### 5. Visual Identity and CSS Design
+The variables include:
 
-For Week 3, I focused on improving the visual design of the Budget Tracker without changing its HTML structure or functionality.
+- Brand color
+- Accent color
+- Background color
+- Surface color
+- Primary text color
+- Secondary text color
+- Border color
+- Sidebar color
+- Sidebar text color
+- Card shadow
 
-The design includes:
+### 5. Responsive Design
 
-- A consistent blue and navy color palette
-- Light blue-gray page background
-- White card-style sections
-- Rounded corners
-- Consistent borders
-- Improved spacing and padding
-- Alternating table row colors
-- Styled table headers
-- Consistent form controls and buttons
-- Button hover effects
-- Focus styles for input fields and the category selector
+A responsive media query is included for screens below 768px.
 
-### 6. Typography
+On smaller screens:
 
-Google Fonts were used to improve the typography of the project.
+- The dashboard changes to a single-column layout
+- Navigation items wrap
+- The header stacks vertically
+- Financial cards display one per row
 
-- Poppins is used for headings.
-- Inter is used for body text, labels, form elements, buttons, and table content.
+The responsive layout was tested using Chrome DevTools Device Toolbar with an iPhone 16 Pro Max viewport.
 
-The fonts are used consistently throughout the Budget Tracker to create a clean and readable design.
+### 6. Card Micro-Interactions
 
+The financial cards include:
+
+- Hover effects
+- Keyboard focus effects
+- A subtle upward movement
+- A soft box-shadow effect
+- A 200ms transition
+
+The cards are keyboard-focusable using `tabindex="0"`.
+
+### 7. Dark Theme
+
+A dark theme stretch goal was included using:
+
+```css
+@media (prefers-color-scheme: dark)
 ## Files in the Project
 
-- `index.html` – Contains the structure and content of the Budget Tracker.
-- `style.css` – Contains the visual styling, color palette, typography, table styling, form styling, and layout.
-- `README.md` – Explains the project and the features that were built.
+- `index.html` — Contains the dashboard structure, navigation, header, and financial cards.
+- `style.css` — Contains the Grid, Flexbox, responsive design, custom properties, and micro-interactions.
+- `README.md` — Explains the project and the technologies used.
 
 ## Technologies Used
 
 - HTML5
 - CSS3
-- Google Fonts
-- YouTube iframe
-- Visual Studio Code
+- CSS Grid
+- CSS Flexbox
+- CSS Custom Properties
+- Responsive Design
+- Chrome DevTools
 
 ## Author
 

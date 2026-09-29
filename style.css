@@ -1,191 +1,260 @@
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
+/* SpendWise Dashboard - Week 4 */
 
-/* Color palette */
+/* Theme variables */
 :root {
-    --primary: #2563eb;
-    --primary-dark: #1d4ed8;
-    --heading: #1e293b;
-    --text: #334155;
+    --brand: #2563eb;
+    --accent: #14b8a6;
     --background: #f1f5f9;
-    --card: #ffffff;
-    --table-row: #eff6ff;
+    --surface: #ffffff;
+    --primary-text: #1e293b;
+    --secondary-text: #64748b;
     --border: #cbd5e1;
+    --sidebar: #0f172a;
+    --sidebar-text: #e2e8f0;
+    --card-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
 }
 
-/* General page styling */
-body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 40px;
-    background-color: var(--background);
-    color: var(--text);
-}
-
-/* Centered content container */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Page heading card */
-h1 {
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    color: var(--heading);
-    background-color: var(--card);
-    padding: 25px;
-    margin: 0 0 20px 0;
-    border: 2px solid var(--border);
-    border-radius: 12px;
-}
-
-/* Description */
-p {
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-/* Add Expense card */
-#add-expense {
-    background-color: var(--card);
-    padding: 25px;
-    margin-top: 25px;
-    border: 2px solid var(--border);
-    border-radius: 12px;
-}
-
-/* Section headings */
-h2 {
-    font-family: 'Poppins', sans-serif;
-    color: var(--heading);
-}
-
-/* Direct child selector */
-#add-expense > h2 {
-    color: var(--primary);
-}
-
-/* Form styling */
-#add-expense form {
-    display: block;
-}
-
-/* Labels */
-label {
-    display: block;
-    font-weight: 600;
-    margin-top: 15px;
-    margin-bottom: 6px;
-    color: var(--heading);
-}
-
-/* Input, select, and button styling */
-input,
-select,
-button {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid var(--border);
-    border-radius: 8px;
+/* Reset */
+* {
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
 }
 
-/* Focus selector */
-input:focus,
-select:focus {
-    border: 2px solid var(--primary);
-    outline: none;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--primary-text);
 }
 
-/* Button */
-button {
-    background-color: var(--primary);
-    color: white;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 20px;
+/* Overall dashboard layout - CSS Grid */
+.dashboard {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 240px 1fr;
 }
 
-/* Button hover */
-button:hover {
-    background-color: var(--primary-dark);
+/* Sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--sidebar);
+    color: var(--sidebar-text);
+    padding: 24px;
 }
 
-/* Expenses card */
-.expenses {
-    background-color: var(--card);
-    padding: 25px;
-    margin-top: 25px;
-    border: 2px solid var(--border);
-    border-radius: 12px;
+.sidebar-brand {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
 }
 
-/* Descendant selector */
-.expenses table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: var(--card);
-    margin-top: 15px;
+.sidebar-brand h2 {
+    margin: 0;
+    font-size: 24px;
 }
 
-/* Table cells */
-.expenses th,
-.expenses td {
-    border: 1px solid var(--border);
-    padding: 14px;
-    text-align: left;
+.sidebar-brand p {
+    margin: 6px 0 0;
+    color: #94a3b8;
+    font-size: 14px;
 }
 
-/* Table header */
-.expenses th {
-    background-color: var(--primary);
-    color: white;
-    font-family: 'Poppins', sans-serif;
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* Alternating table rows */
-.expenses tr:nth-child(even) {
-    background-color: var(--table-row);
-}
-
-/* Table row hover effect */
-.expenses tr:hover {
-    background-color: #dbeafe;
-}
-
-/* Collapsible instructions */
-details {
-    background-color: var(--card);
-    padding: 20px;
-    margin-top: 25px;
-    border: 2px solid var(--border);
-    border-radius: 12px;
-}
-
-summary {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: var(--primary);
-    cursor: pointer;
-}
-
-/* Budgeting Tips section */
-section:last-of-type {
-    background-color: var(--card);
-    padding: 25px;
-    margin-top: 25px;
-    border: 2px solid var(--border);
-    border-radius: 12px;
-}
-
-/* Responsive video */
-iframe {
-    max-width: 100%;
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 14px;
     border-radius: 8px;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background-color: var(--brand);
+    color: white;
+}
+
+/* Main content */
+.main-content {
+    padding: 40px;
+    min-width: 0;
+}
+
+/* Dashboard header - Flexbox */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.eyebrow {
+    margin: 0 0 6px;
+    color: var(--brand);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 34px;
+}
+
+.header-text > p:last-child {
+    margin: 8px 0 0;
+    color: var(--secondary-text);
+}
+
+.header-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 180px;
+    padding: 18px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+}
+
+.header-summary span {
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+.header-summary strong {
+    font-size: 24px;
+    color: var(--brand);
+}
+
+/* Dashboard cards - CSS Grid */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Individual card - Flexbox */
+.dashboard-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 190px;
+    padding: 24px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--card-shadow);
+
+    /* Micro-interaction */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover and keyboard focus */
+.dashboard-card:hover,
+.dashboard-card:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.14);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-label {
+    color: var(--secondary-text);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.dashboard-card h2 {
+    margin: 10px 0 4px;
+    font-size: 32px;
+    color: var(--primary-text);
+}
+
+.dashboard-card p {
+    margin: 0;
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+.card-status {
+    align-self: flex-start;
+    margin-top: 20px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background-color: #ecfeff;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Responsive layout */
+@media (max-width: 767px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        padding: 20px;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nav-item {
+        flex: 1 1 140px;
+    }
+
+    .main-content {
+        padding: 24px;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .header-summary {
+        min-width: 0;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dark theme stretch goal */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --brand: #60a5fa;
+        --accent: #2dd4bf;
+        --background: #0f172a;
+        --surface: #1e293b;
+        --primary-text: #f8fafc;
+        --secondary-text: #cbd5e1;
+        --border: #475569;
+        --sidebar: #020617;
+        --sidebar-text: #e2e8f0;
+        --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
 }
