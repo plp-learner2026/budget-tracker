@@ -11,6 +11,7 @@
     --border: #cbd5e1;
     --sidebar: #0f172a;
     --sidebar-text: #e2e8f0;
+    --status-background: #ecfeff;
     --card-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
 }
 
@@ -171,10 +172,12 @@ body {
     transform: translateY(-4px);
     box-shadow: 0 8px 18px rgba(15, 23, 42, 0.14);
 }
+
 .dashboard-card:focus-visible {
     outline: 3px solid var(--brand);
     outline-offset: 3px;
 }
+
 .card-content {
     display: flex;
     flex-direction: column;
@@ -203,7 +206,7 @@ body {
     margin-top: 20px;
     padding: 6px 10px;
     border-radius: 999px;
-    background-color: #ecfeff;
+    background-color: var(--status-background);
     color: var(--accent);
     font-size: 13px;
     font-weight: 600;
@@ -258,6 +261,7 @@ body {
         --border: #475569;
         --sidebar: #020617;
         --sidebar-text: #e2e8f0;
+        --status-background: #134e4a;
         --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 }
