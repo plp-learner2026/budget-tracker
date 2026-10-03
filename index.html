@@ -20,11 +20,11 @@
 
             <nav class="sidebar-nav">
                 <a href="#" class="nav-item active">Dashboard</a>
-                <a href="#" class="nav-item">Expenses</a>
-                <a href="#" class="nav-item">Budgets</a>
-                <a href="#" class="nav-item">Savings</a>
-                <a href="#" class="nav-item">Reports</a>
-                <a href="#" class="nav-item">Settings</a>
+                <a href="#expenses" class="nav-item">Expenses</a>
+                <a href="#budget-section" class="nav-item">Budgets</a>
+                <a href="#savings" class="nav-item">Savings</a>
+                <a href="#reports" class="nav-item">Reports</a>
+                <a href="#settings" class="nav-item">Settings</a>
             </nav>
         </aside>
 
@@ -41,72 +41,134 @@
 
                 <div class="header-summary">
                     <span>Monthly Budget</span>
-                    <strong>$2,500</strong>
+                    <strong id="budget-display">$2,500</strong>
                 </div>
             </header>
 
+            <!-- Budget Section -->
+            <section class="control-section" id="budget-section">
+                <div class="section-heading">
+                    <h2>Budget Settings</h2>
+                    <p>Set your monthly budget and review your current balance.</p>
+                </div>
+
+                <form id="budget-form" class="budget-form">
+                    <label for="budget-input">Monthly Budget</label>
+                    <div class="form-row">
+                        <input
+                            type="number"
+                            id="budget-input"
+                            min="0"
+                            step="0.01"
+                            placeholder="Enter your budget"
+                            required
+                        >
+                        <button type="submit">Update Budget</button>
+                    </div>
+                </form>
+
+                <div id="budget-feedback" class="feedback" aria-live="polite">
+                    Your budget information will appear here.
+                </div>
+            </section>
+
+            <!-- Add Expense Section -->
+            <section class="control-section" id="expenses">
+                <div class="section-heading">
+                    <h2>Add an Expense</h2>
+                    <p>Record a new expense and see the dashboard update.</p>
+                </div>
+
+                <form id="expense-form" class="expense-form">
+
+                    <div class="form-group">
+                        <label for="expense-category">Category</label>
+                        <select id="expense-category" required>
+                            <option value="">Select category</option>
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Rent">Rent</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Savings">Savings</option>
+                            <option value="Utilities">Utilities</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expense-amount">Amount</label>
+                        <input
+                            type="number"
+                            id="expense-amount"
+                            min="0.01"
+                            step="0.01"
+                            placeholder="Enter amount"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit">Add Expense</button>
+                </form>
+
+                <div id="expense-feedback" class="feedback" aria-live="polite">
+                    Add an expense to update your dashboard.
+                </div>
+            </section>
+
+            <!-- Dashboard Summary -->
+            <section class="summary-grid" aria-label="Budget summary">
+
+                <article class="summary-card">
+                    <span>Total Expenses</span>
+                    <strong id="total-expenses">$2,260</strong>
+                </article>
+
+                <article class="summary-card">
+                    <span>Remaining Balance</span>
+                    <strong id="remaining-balance">$240</strong>
+                </article>
+
+                <article class="summary-card">
+                    <span>Expense Records</span>
+                    <strong id="expense-count">6</strong>
+                </article>
+
+            </section>
+
             <!-- Dashboard Cards -->
-            <section class="dashboard-cards" aria-label="Spending categories">
+            <section class="dashboard-section" id="savings">
 
-                <article class="dashboard-card" tabindex="0">
-                    <div class="card-content">
-                        <span class="card-label">Food</span>
-                        <h2>$320</h2>
-                        <p>Monthly spending</p>
-                    </div>
-                    <span class="card-status">Within budget</span>
-                </article>
+                <div class="section-heading">
+                    <h2>Spending Categories</h2>
+                    <p>Your current expense records.</p>
+                </div>
 
-                <article class="dashboard-card" tabindex="0">
-                    <div class="card-content">
-                        <span class="card-label">Transport</span>
-                        <h2>$180</h2>
-                        <p>Monthly spending</p>
-                    </div>
-                    <span class="card-status">On track</span>
-                </article>
+                <div
+                    class="dashboard-cards"
+                    id="expense-cards"
+                    aria-label="Spending categories"
+                >
+                    <!-- Expense cards are created dynamically with JavaScript -->
+                </div>
 
-                <article class="dashboard-card" tabindex="0">
-                    <div class="card-content">
-                        <span class="card-label">Rent</span>
-                        <h2>$900</h2>
-                        <p>Monthly spending</p>
-                    </div>
-                    <span class="card-status">Fixed expense</span>
-                </article>
+            </section>
 
-                <article class="dashboard-card" tabindex="0">
-                    <div class="card-content">
-                        <span class="card-label">Entertainment</span>
-                        <h2>$150</h2>
-                        <p>Monthly spending</p>
-                    </div>
-                    <span class="card-status">Within budget</span>
-                </article>
+            <!-- Reports Section -->
+            <section class="dashboard-section" id="reports">
 
-                <article class="dashboard-card" tabindex="0">
-                    <div class="card-content">
-                        <span class="card-label">Savings</span>
-                        <h2>$500</h2>
-                        <p>Monthly contribution</p>
-                    </div>
-                    <span class="card-status">Goal progress</span>
-                </article>
-
-                <article class="dashboard-card" tabindex="0">
-                    <div class="card-content">
-                        <span class="card-label">Utilities</span>
-                        <h2>$210</h2>
-                        <p>Monthly spending</p>
-                    </div>
-                    <span class="card-status">On track</span>
-                </article>
+                <div class="section-heading">
+                    <h2>Budget Feedback</h2>
+                    <p id="report-message">
+                        Your budget status will appear here.
+                    </p>
+                </div>
 
             </section>
 
         </main>
 
     </div>
-   <script src="script.js"></script>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
