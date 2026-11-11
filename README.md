@@ -249,3 +249,43 @@ The program was also tested with invalid values to confirm that conditional stat
 ## Author
 
 Abdirizack Aden
+
+---
+
+## Deployment
+
+### Live Website
+**https://spendwise-abdirizack.netlify.app**
+
+### GitHub Repository Information
+- Repository: https://github.com/plp-learner2026/budget-tracker
+- Visibility: Public
+- Branch: `master`
+
+### Deployment Tools
+- GitHub (version control and source of the deployment)
+- Netlify (hosting and continuous deployment)
+
+### Deployment Process Summary
+1. Checked the project structure: `index.html`, `style.css` and `script.js` are at the top level and linked with relative paths.
+2. Confirmed the GitHub repository was public.
+3. Created a Netlify account and imported the repository with **Import a Git repository**.
+4. Deployed from the `master` branch with no build command and no publish directory, since the site is plain HTML, CSS and JavaScript.
+5. Renamed the site from the random Netlify name to `spendwise-abdirizack`.
+6. Set the project visibility to public so anyone can open the site.
+7. Tested continuous deployment: changed the dashboard heading to "Welcome back, Abdirizack!", pushed to GitHub, and Netlify rebuilt and published the change automatically.
+8. Tested the live site: styling, budget form, expense form, expense cards and navigation all work.
+
+### Challenges Encountered During Deployment
+- **Netlify onboarding:** the sign-up form reloaded several times, and a screen offered an AI site builder. I skipped it and used **Import a Git repository** to deploy my own code.
+- **Wrong link:** the first address I copied was a deploy-specific link with a long prefix, not the main site address. I used the main `.netlify.app` address instead.
+- **Private visibility:** the project was private by default, so only my team could open it. I changed it to public and checked it in a private browser window.
+- **Missing local copy:** the project folder was no longer on my laptop. I cloned the repository from GitHub with `git clone`.
+- **Unsaved editor state:** `index.html` showed empty in the editor while the file on disk was intact. I closed it without saving and reopened it, which avoided overwriting the file.
+
+### Lessons Learned
+- Netlify watches the GitHub branch, so every push becomes a new deploy without any manual upload.
+- Relative file paths such as `style.css` work on any server, while local paths like `C:\...` would break on the live site.
+- A site can look fine for the owner but be blocked for visitors, so always test in a private window.
+- GitHub keeps a full copy of the project, so a lost local folder can be recovered with `git clone`.
+- Checking `git status` before saving or committing shows whether anything was really changed.
