@@ -185,7 +185,7 @@ Contains the structure of the SpendWise dashboard, forms, summary sections, and 
 
 ### `style.css`
 
-Contains the visual styling, responsive design, CSS Grid, Flexbox, custom properties, forms, and dark theme.
+Contains the visual styling, responsive design, CSS Grid, Flexbox, custom properties, forms, and light theme.
 
 ### `script.js`
 
